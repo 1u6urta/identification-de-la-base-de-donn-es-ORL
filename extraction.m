@@ -1,11 +1,8 @@
 function [Mattrain, Mattest] = extraction()
-    %chemin_im = 'C:\\Users\\dell latitude\\Desktop\\BioSec\\ORL database\\s%d\\%d.pgm';
-    %chemin_resultat_train = 'C:\\Users\\dell latitude\\Desktop\\train\\%d_%d.fp';
-    %chemin_resultat_test = 'C:\\Users\\dell latitude\\Desktop\\test\\%d_%d.fp';
     
-    chemin_im = 'C:\\Users\\Hp\\Desktop\\MATLAB\\ORL database\\s%d\\%d.pgm';
-    chemin_resultat_train = 'C:\\Users\\Hp\\Desktop\\MATLAB\\train\\%d_%d.fp';
-    chemin_resultat_test = 'C:\\Users\\Hp\\Desktop\\MATLAB\\test\\%d_%d.fp';
+    chemin_im = 'MATLAB\\ORL database\\s%d\\%d.pgm';
+    chemin_resultat_train = 'MATLAB\\train\\%d_%d.fp';
+    chemin_resultat_test = 'MATLAB\\test\\%d_%d.fp';
 
 
     num_subjects = 40;
@@ -17,10 +14,10 @@ function [Mattrain, Mattest] = extraction()
         for img_index = 1:num_images_par_subject
             img_path = sprintf(chemin_im, subject, img_index);
             
-            if isfile(img_path) % Vérifier si le fichier existe
+            if isfile(img_path) % VÃ©rifier si le fichier existe
                 img = imread(img_path);
             else
-                error(['Fichier non trouvé : ', img_path]);
+                error(['Fichier non trouvÃ© : ', img_path]);
             end
 
             img_d = double(img);
